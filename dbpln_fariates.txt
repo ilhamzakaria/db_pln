@@ -1,0 +1,38 @@
+Setting environment for using XAMPP for Windows.
+Asus@LAPTOP-OJI1FLDG c:\xampp\control panel
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.3.15-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database dbpln_fariates;
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [(none)]> use dbpln_fariates;
+Database changed
+MariaDB [dbpln_fariates]> create table user(
+    -> username varchar (30) not null,
+    -> password varchar (100) not null,
+    -> hakakses varchar (50) not null,
+    -> primary key (username));
+Query OK, 0 rows affected (0.308 sec)
+
+MariaDB [dbpln_fariates]> alter table user modify username varchar (50) not null;
+Query OK, 0 rows affected (0.204 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [dbpln_fariates]> desc user;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| username | varchar(50)  | NO   | PRI | NULL    |       |
+| password | varchar(100) | NO   |     | NULL    |       |
+| hakakses | varchar(50)  | NO   |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+3 rows in set (0.012 sec)
+
+MariaDB [dbpln_fariates]>
